@@ -1,0 +1,28 @@
+{
+  "name": "test-avito-rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "tap tests/**.test.js --disable-coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.8.1",
+    "fastify": "^4.25.2",
+    "fastify-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3",
+    "prisma": "^5.8.1",
+    "tap": "^18.7.0"
+  }
+}

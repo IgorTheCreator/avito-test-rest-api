@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Adv {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  createdAt DateTime @default(now())
+  cost Float
+
+  picture Picture[]
+
+  @@map("adv")
+}
+
+model Picture {
+  id Int @id @default(autoincrement())
+  link String
+
+  adv Adv? @relation(fields: [advId], references: [id])
+  advId Int?
+
+  @@map("picture")
+}
